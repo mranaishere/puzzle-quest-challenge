@@ -1,11 +1,30 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Board from "@/components/Board";
+import { Button } from "@/components/ui/button";
+import { RefreshCw } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-puzzle-background text-puzzle-text p-4">
+      <div className="max-w-md mx-auto space-y-8">
+        <div className="text-center space-y-2">
+          <h1 className="text-4xl font-bold text-puzzle-primary">15 Puzzle</h1>
+          <p className="text-puzzle-text/80">
+            Slide the tiles to arrange them in order from 1 to 15
+          </p>
+        </div>
+        
+        <Board />
+
+        <div className="text-center">
+          <Button
+            onClick={() => window.location.reload()}
+            variant="outline"
+            className="bg-puzzle-primary/10 hover:bg-puzzle-primary/20 text-puzzle-primary border-puzzle-primary/20"
+          >
+            <RefreshCw className="mr-2 h-4 w-4" />
+            New Game
+          </Button>
+        </div>
       </div>
     </div>
   );
